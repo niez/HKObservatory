@@ -24,7 +24,23 @@ PS C:\Users\Nick_Nie> emulator -list-avds
 Nexus_5X_API_27_x86
 ```
 * UIAutomatorViewer
+    * Command to startup UIAutomatorViewer
+    ```jshelllanguage
+    UIAutomatorViewer
+    ```
 * Appium Inspector
+    * Desired Capabilities setup for element inspect
+    ```jshelllanguage
+    {
+      "deviceName": "Nexus_5X_API_27_x86",
+      "udid": "emulator-5554",
+      "platformName": "Android",
+      "platformVersion": "8.1.0",
+      "app": "D:/app/hko.MyObservatory_v1_0_2018-01-31.apk"
+    }
+    ```
+> Notes: 
+> Before using the command like _emulator_, _adb_, _UIAutomatorViewer_ in command line, you need to set the environment variables for Android SDK, otherwise you will get command not found from the command console. For details, please refer to http://toolsqa.com/mobile-automation/appium/appium-tutorial
 
 # How to run the test
 1. Download target application from https://www.apkmonk.com/download-app/hko.MyObservatory_v1_0/4_hko.MyObservatory_v1_0_2018-01-31.apk/

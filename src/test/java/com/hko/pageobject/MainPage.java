@@ -24,17 +24,13 @@ public class MainPage extends BasePage {
     private static final String XPATH_9TH_DAY_FORECAST = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.TextView[1]";
 
     @FindBy(xpath = XPATH_9_DAY_FORECAST_TAP)
-    MobileElement nineDayForecastTap;
+    private MobileElement nineDayForecastTap;
 
     @FindBy(xpath = XPATH_1ST_DAY_FORECAST)
-    MobileElement day1;
+    private MobileElement day1;
 
     @FindBy(xpath = XPATH_9TH_DAY_FORECAST)
-    MobileElement day9;
-
-    public MainPage(){
-
-    }
+    private MobileElement day9;
 
     public void launchApp() throws InterruptedException {
         waitUntilElementVisible(By.id(ID_AGREE_BUTTON)).click();

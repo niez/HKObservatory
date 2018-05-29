@@ -1,10 +1,10 @@
 package com.hko.base;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileDriver;
 import io.appium.java_client.TouchAction;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
@@ -16,10 +16,10 @@ import java.time.Duration;
 public class BasePage {
 
 
-    private WebDriver driver;
+    private AppiumDriver driver;
     private WebDriverWait wait;
 
-    protected void setDriver(WebDriver driver){
+    protected void setDriver(AppiumDriver driver){
         this.driver = driver;
         init();
     }
@@ -32,7 +32,6 @@ public class BasePage {
         wait = new WebDriverWait(driver, 30);
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
-
 
     protected void swipingHorizontal(int duration) {
         // duration should be in milliseconds

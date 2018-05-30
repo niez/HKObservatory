@@ -35,7 +35,7 @@ public class BaseTest {
     }
 
     private void processAnnotation(Field field) {
-        if(field.isAnnotationPresent(Page.class)){
+        if(field.isAnnotationPresent(Page.class) && BaseTest.class.isAssignableFrom(field.getType())){
             setField(field);
         }
     }
@@ -43,6 +43,7 @@ public class BaseTest {
     private void setField(Field field) {
         //
         try {
+            ReflectionUtils.makeAccessible(field);
             BasePage basePage = (BasePage) field.getType().newInstance();
             basePage.setDriver(driver);
             ReflectionUtils.setField(field, this, basePage);
